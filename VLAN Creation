@@ -1,0 +1,17 @@
+def create_vlans():
+    num_of_vlans = int(input("How many vlans do you want to create? "))
+    vlan_names = {}
+
+    for i in range(num_of_vlans):
+        vlancounter = i +1
+        vlan_num = input(f"Enter the Number for VLAN {vlancounter}: ")
+        vlan_name = input(f"Enter the name for VLAN {vlan_num}: ")
+        vlan_names[vlan_num] = vlan_name
+
+    print("\nVLANs configuration commands:")
+
+    for vlan_num, vlan_name in vlan_names.items():
+        vlan_config = f"vlan {vlan_num}\nname {vlan_name}"
+        print(vlan_config)
+
+create_vlans()
